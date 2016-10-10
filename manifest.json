@@ -1,0 +1,7 @@
+{
+  "name": "HackRiddle App",
+  "short_name": "HackRiddle",
+  "start_url": "/",
+  "display": "standalone",
+  "gcm_sender_id": "482941778795"
+}
