@@ -17,6 +17,9 @@
 		}]);
 
 	</script>
+
+
+	</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
@@ -25,7 +28,7 @@
 		header,
 		main,
 		body {
-			/*			padding-left: 225px;*/
+/*						padding-left: 225px;*/
 			/*
 			background: url('img/bg.jpg') no-repeat 0 0 fixed;
 			background-position: 0px 0px;
@@ -43,21 +46,69 @@
 				padding-left: 0;
 			}
 		}
+		
+		body {
+			overflow: hidden;
+		}
+		/* Preloader */
+		
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #fff;
+			/* change if the mask should have another color then white */
+			z-index: 99;
+			/* makes sure it stays on top */
+		}
+		
+		#status {
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			left: 50%;
+			/* centers the loading animation horizontally one the screen */
+			top: 50%;
+			/* centers the loading animation vertically one the screen */
+			background-image: url(img/status.gif);
+			/* path to your loading animation */
+			background-repeat: no-repeat;
+			background-position: center;
+			margin: -100px 0 0 -100px;
+			/* is width and height divided by two */
+		}
+		
+		@media only screen and (max-width: 600px) {
+    li > a > i {
+        padding-top: 1.0rem;
+    }
+}
 
 	</style>
+	<script>
+		function comingSoon(item){
+			Materialize.toast(item + ' coming soon!', 4000);
+		}
+	</script>
 </head>
-
 <body class="amber">
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
 	<div class="navbar fixed">
 		<nav class="" style="background-color: #083791;" role="navigation">
 			<div class="nav-wrapper container">
-				<a id="logo-container" href="#" class="brand-logo">
-
+				
+				<a id="logo-container" href="#" class="brand-logo center">
 					<img height="30px" style="margin-top: 12px;" src="img/hackRiddleLongNoBG.png">
 				</a>
 				<ul id="nav-mobile" class="side-nav">
-					<li><a href="#">Venue Map</a></li>
-					<li><a href="#">Prizes</a></li>
+					<li><a onclick="$('.nav-mobile').sideNav('hide');"><i class="material-icons left red-text">home</i>Home</a></li>
+					<li><a onclick="comingSoon('The venue map is');" href="#" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
+					<li><a onclick="comingSoon('Prizes are');" href="#"><i class="material-icons left amber-text">star</i>Prizes</a></li>
 				</ul>
 				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
 			</div>
@@ -67,30 +118,21 @@
 	<div class="container">
 		<div class="section">
 			<div class="row">
+				
 				<script src="https://gridspree.io/ss/Gz2Shdc7R8HUiLsXgLTTSZ.js"></script>
 				<script type="x-gridspree-template">
 					{{#rows}}
-					<div class="col s12">
+					<div class="col s12 m6 offset-m6 pull-m3">
 						<div class="card white">
-							<div class="card-content black-text center">
-								<span class="card-title"> <i class="material-icons small vertical-align-middle">schedule</i><br> Schedule</span>
-								<p>{{Update}}</p>
+							<div class="card-content black-text">
+								<span class="card-title"><center>{{Title}}</center></span>
+								<p><b>{{Time}}</b>: {{Content}}</p>
 							</div>
 						</div>
 					</div>
 					{{/rows}}
 				</script>
 			</div>
-		</div>
-		<br>
-		<br>
-
-		<div class="section">
-			<form action="https://gridspree.io/ss/YmkisdQu3UhtQjreKpfxW4" method="POST">
-				<input type="text" name="Update" placeholder="Update">
-				<input type="text" name="Time" placeholder="Time">
-				<input type="submit">
-			</form>
 		</div>
 	</div>
 
@@ -101,6 +143,20 @@
 		$(".button-collapse").sideNav();
 		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
 		//$('.collapsible').collapsible();s
+
+	</script>
+
+	<!-- Preloader -->
+	<script type="text/javascript">
+		//<![CDATA[
+		$(window).on('load', function() { // makes sure the whole site is loaded 
+				$('#status').fadeOut(); // will first fade out the loading animation 
+				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+				$('body').delay(350).css({
+					'overflow': 'visible'
+				});
+			})
+			//]]>
 
 	</script>
 </body>
