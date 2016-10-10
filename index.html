@@ -53,14 +53,14 @@
 		main,
 		body {
 			/*						padding-left: 225px;*/
-			/*
+			
 			background: url('img/bg.jpg') no-repeat 0 0 fixed;
 			background-position: 0px 0px;
 			-webkit-background-size: cover;
 			-moz-background-size: cover;
 			-o-background-size: cover;
 			background-size: cover;
-*/
+
 		}
 		
 		@media only screen and (max-width: 992px) {
@@ -121,7 +121,7 @@
 	</script>
 </head>
 
-<body onload="addToHomescreen();" class="amber">
+<body onload="addToHomescreen();" >
 	<!-- Preloader -->
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
@@ -130,15 +130,20 @@
 		<nav class="" style="background-color: #083791;" role="navigation">
 			<div class="nav-wrapper container">
 
-				<a id="logo-container" href="#" class="brand-logo center">
-					<img height="30px" style="margin-top: 12px;" src="img/hackRiddleLongNoBG.png">
-				</a>
+				<a id="logo-container" href="#" class="brand-logo center">Dashboard</a>
 				<ul id="nav-mobile" class="side-nav">
+					<li style="background-color: #083791;">
+						<div class="userView center" >
+							<img src="img/hackRiddleLogo.png" style="width: 80%; margin-top: 30px;">
+						</div>
+					</li>
 					<li><a onclick="$('.nav-mobile').sideNav('hide');"><i class="material-icons left red-text">home</i>Home</a></li>
 					<li><a onclick="comingSoon('The venue map is');" href="#" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
 					<li><a onclick="comingSoon('Prizes are');" href="#"><i class="material-icons left amber-text">star</i>Prizes</a></li>
+					<li><a onclick="comingSoon('Travel reimbursement information is');" href="#"><i class="material-icons left blue-text">directions_car</i>Travel reimbursement</a></li>
+					<li><a onclick="comingSoon('Social media is');" href="#"><i class="material-icons left indigo-text">people</i>Social Media</a></li>
 				</ul>
-				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+				<a href="#" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 			</div>
 		</nav>
 	</div>
@@ -147,7 +152,7 @@
 		<div class="section">
 			<div class="row">
 
-				<script src="https://gridspree.io/ss/Gz2Shdc7R8HUiLsXgLTTSZ.js"></script>
+								<script src="https://gridspree.io/ss/Gz2Shdc7R8HUiLsXgLTTSZ.js"></script>
 				<script type="x-gridspree-template">
 					{{#rows}}
 					<div class="col s12 m6 offset-m6 pull-m3">
@@ -168,7 +173,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 	<script>
 		// Initialize collapse button
-		$(".button-collapse").sideNav();
+		$(".button-collapse").sideNav({
+			menuWidth: 300
+		});
 		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
 		//$('.collapsible').collapsible();s
 
