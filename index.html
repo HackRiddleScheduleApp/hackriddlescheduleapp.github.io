@@ -1,1 +1,109 @@
-Hello world from our app
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>The Materialize Example</title>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		OneSignal.push(["init", {
+			appId: "0c167a16-be47-4a11-a455-0c15ac8925f4",
+			safari_web_id: '0c167a16-be47-4a11-a455-0c15ac8925f4',
+			autoRegister: false,
+			/* Set to true to automatically prompt visitors */
+			subdomainName: 'app.hackriddle.com',
+			notifyButton: {
+				enable: true /* Set to false to hide */
+			}
+		}]);
+
+	</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+	<style>
+		header,
+		main,
+		body {
+			/*			padding-left: 225px;*/
+			/*
+			background: url('img/bg.jpg') no-repeat 0 0 fixed;
+			background-position: 0px 0px;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+*/
+		}
+		
+		@media only screen and (max-width: 992px) {
+			header,
+			main,
+			body {
+				padding-left: 0;
+			}
+		}
+
+	</style>
+</head>
+
+<body class="amber">
+	<div class="navbar fixed">
+		<nav class="" style="background-color: #083791;" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="logo-container" href="#" class="brand-logo">
+
+					<img height="30px" style="margin-top: 12px;" src="img/hackRiddleLongNoBG.png">
+				</a>
+				<ul id="nav-mobile" class="side-nav">
+					<li><a href="#">Venue Map</a></li>
+					<li><a href="#">Prizes</a></li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container">
+		<div class="section">
+			<div class="row">
+				<script src="https://gridspree.io/ss/Gz2Shdc7R8HUiLsXgLTTSZ.js"></script>
+				<script type="x-gridspree-template">
+					{{#rows}}
+					<div class="col s12">
+						<div class="card white">
+							<div class="card-content black-text center">
+								<span class="card-title"> <i class="material-icons small vertical-align-middle">schedule</i><br> Schedule</span>
+								<p>{{Update}}</p>
+							</div>
+						</div>
+					</div>
+					{{/rows}}
+				</script>
+			</div>
+		</div>
+		<br>
+		<br>
+
+		<div class="section">
+			<form action="https://gridspree.io/ss/YmkisdQu3UhtQjreKpfxW4" method="POST">
+				<input type="text" name="Update" placeholder="Update">
+				<input type="text" name="Time" placeholder="Time">
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<script>
+		// Initialize collapse button
+		$(".button-collapse").sideNav();
+		// Initialize collapsible (uncomment the line below if you use the dropdown variation)
+		//$('.collapsible').collapsible();s
+
+	</script>
+</body>
+
+</html>
