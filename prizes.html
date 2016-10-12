@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+	<title>HackRiddle</title>
+	<meta charset="utf-8">
+	<meta name="description" content="The official HackRiddle App. Built for Embry-Riddle Aeronautical University's first 24-hour hackathon held on October 15th-16th, 2016.">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" href="icon/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+	<link rel="icon" sizes="192x192" href="icon/favicon48.png">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#083791">
+	<meta name="apple-mobile-web-app-title" content="HackRiddle App">
+	<link rel="apple-touch-icon-precomposed" href="icon/favicon48.png">
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="icon/favicon48.png">
+	<meta name="msapplication-TileColor" content="#083791">
+
+	<meta name="theme-color" content="#083791">
+
+	<link rel="shortcut icon" href="icon/favicon48.png">
+
+	<link rel="manifest" href="/manifest.json">
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		OneSignal.push(["init", {
+			appId: "37c5f54d-a036-4265-b055-e64a796e02af",
+			safari_web_id: 'web.onesignal.auto.67813ec5-45a5-4c64-95fb-a167cd7c4d3a',
+			autoRegister: true,
+			notifyButton: {
+				enable: true /* Set to false to hide */
+			}
+		}]);
+
+	</script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/addtohomescreen.css">
+	<script src="js/addtohomescreen.js"></script>
+	<script>
+		function comingSoon(item) {
+			Materialize.toast(item + ' coming soon!', 4000);
+		}
+
+	</script>
+</head>
+
+<body onload="addToHomescreen();">
+	<!-- Preloader -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+	<div class="navbar fixed">
+		<nav class="" style="background-color: #083791;" role="navigation">
+			<div class="nav-wrapper container">
+
+				<a id="logo-container" href="#" class="brand-logo center">Dashboard</a>
+				<ul id="nav-mobile" class="side-nav">
+					<li style="background-color: #083791;">
+						<div class="userView center">
+							<img src="img/hackRiddleLogo.png" style="width: 80%; margin-top: 30px;">
+						</div>
+					</li>
+					<li><a onclick="$('.nav-mobile').sideNav('hide');"><i class="material-icons left red-text">home</i>Home</a></li>
+					<li><a onclick="comingSoon('The venue map is');" href="#" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
+					<li><a onclick="comingSoon('Information about meals is');" href="#" class="disabled"><i class="material-icons left orange-text">local_dining</i>Meals</a></li>
+					<li><a onclick="comingSoon('The gate talks schedule is');" href="#" class="disabled"><i class="material-icons left violet-text">school</i>Gate Talks</a></li>
+					<li><a onclick="comingSoon('Prizes are');" href="#"><i class="material-icons left amber-text">star</i>Prizes</a></li>
+					<li><a onclick="comingSoon('Travel reimbursement information is');" href="#"><i class="material-icons left blue-text">directions_car</i>Travel reimbursement</a></li>
+					<li><a onclick="comingSoon('Social media is');" href="#"><i class="material-icons left indigo-text">people</i>Connect</a></li>
+					<li><a onclick="comingSoon('The about page is');" href="#"><i class="material-icons left pink-text">info</i>About the app</a></li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+	</div>
+
+	<!-- ////////// EVERYTHING ABOVE IS FOR HEADER AND NAVBAR ////////// -->
+	<!-- ////////// THIS IS WHERE YOU SHOULD ADD PAGE CONTENT ////////// -->
+
+	<div class="container">
+		<div class="section">
+			<div class="row">
+				<div class="col s12">
+
+					<p>
+
+						<script src="https://gridspree.io/ss/zLi2KRjapKmytfDnfuMPoP.js"></script>
+						<script type="x-gridspree-template">
+
+							{{#rows}}
+							<div class="card white">
+								<div class="card-content black-text">
+									<span class="card-title">{{Prize}}</span> 
+
+									<br>{{Category}}<br>
+									{{Description}}
+
+								</div>
+							</div>
+							{{/rows}}
+
+						</script>
+
+					</p>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="min-height: 200px;">
+		<br>
+	</div>
+
+	<!-- //////////    DO NOT EDIT BEYOND THIS POINT      ////////// -->
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+	<script>
+		$(".button-collapse").sideNav({
+			menuWidth: 300
+		});
+
+	</script>
+	<!-- Preloader -->
+	<script type="text/javascript">
+		//<![CDATA[
+		$(window).on('load', function() { // makes sure the whole site is loaded 
+				$('#status').fadeOut(); // will first fade out the loading animation 
+				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+				$('body').delay(350).css({
+					'overflow': 'visible'
+				});
+			})
+			//]]>
+
+	</script>
+</body>
+
+</html>
