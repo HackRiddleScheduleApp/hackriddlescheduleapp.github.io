@@ -64,7 +64,7 @@
 		<nav class="" style="background-color: #083791;" role="navigation">
 			<div class="nav-wrapper container">
 
-				<a id="logo-container" href="#" class="brand-logo center">About</a>
+				<a id="logo-container" href="#" class="brand-logo center">Dashboard</a>
 				<ul id="nav-mobile" class="side-nav">
 					<li style="background-color: #083791;">
 						<div class="userView center">
@@ -84,44 +84,35 @@
 			</div>
 		</nav>
 	</div>
-
+	
 	<!-- ////////// EVERYTHING ABOVE IS FOR HEADER AND NAVBAR ////////// -->
 	<!-- ////////// THIS IS WHERE YOU SHOULD ADD PAGE CONTENT ////////// -->
-
+	
 	<div class="container">
 		<div class="section">
 			<div class="row">
-				<div class="col s12">
-					<div class="card white">
-						<div class="card-content black-text">
-
-							<p>The HackRiddle App was built by members of the Mobile Application Development (M.A.D.) Club at Embry-Riddle Aeronautical University. Learn more about our team members here, and learn more about our organization on our website at <a href="www.eraumad.club">eraumad.club!</a></p>
-							<br>
-							<ul class="collection">
-								<script src="https://gridspree.io/ss/kc7QtJZvPLkqVYNYFV4htV.js"></script>
-								<script type="x-gridspree-template">
-									{{#rows}}
-									<li class="collection-item avatar">
-										<img src="{{Picture URL}}" alt="" class="circle">
-										<span class="title"><b>{{Name}},</b></span> {{Title}} 
-										(<a style="color: #083791;" href="{{GitHub URL}}">GitHub</a>)
-										<p>{{Bio}}
-										</p>
-
-									</li>
-
-									{{/rows}}
-								</script>
-							</ul>
+				<script src="https://gridspree.io/ss/uJaGrMU3PdZXZVypiGkqP7.js"></script>
+				<script type="x-gridspree-template">
+					{{#rows}}
+					<div class="col s12 m6 offset-m6 pull-m3">
+						<div class="card white">
+							<div class="card-content black-text">
+								<span class="card-title"><center>{{Time}}</center></span>
+								<p>{{Description}}</p>
+							</div>
 						</div>
 					</div>
-				</div>
+					{{/rows}}
+				</script>
 			</div>
 		</div>
 	</div>
-
+	<div style="min-height: 200px;">
+		<br>
+	</div>
+	
 	<!-- //////////    DO NOT EDIT BEYOND THIS POINT      ////////// -->
-
+	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 	<script>

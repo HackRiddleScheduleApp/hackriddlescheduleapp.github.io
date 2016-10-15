@@ -64,7 +64,7 @@
 		<nav class="" style="background-color: #083791;" role="navigation">
 			<div class="nav-wrapper container">
 
-				<a id="logo-container" href="#" class="brand-logo center">About</a>
+				<a id="logo-container" href="#" class="brand-logo center">Dashboard</a>
 				<ul id="nav-mobile" class="side-nav">
 					<li style="background-color: #083791;">
 						<div class="userView center">
@@ -72,9 +72,9 @@
 						</div>
 					</li>
 					<li><a href="index.html"><i class="material-icons left red-text">home</i>Home</a></li>
-					<li><a href="map.html" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
-					<li><a href="meals.html" class="disabled"><i class="material-icons left orange-text">local_dining</i>Meals</a></li>
-					<li><a href="gatetalks.html" class="disabled"><i class="material-icons left violet-text">school</i>Gate Talks</a></li>
+					<li><a onclick="comingSoon('The venue map is');" href="#" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
+					<li><a onclick="comingSoon('Information about meals is');" href="#" class="disabled"><i class="material-icons left orange-text">local_dining</i>Meals</a></li>
+					<li><a onclick="comingSoon('The gate talks schedule is');" href="#" class="disabled"><i class="material-icons left violet-text">school</i>Gate Talks</a></li>
 					<li><a onclick="comingSoon('Prizes are');" href="#"><i class="material-icons left amber-text">star</i>Prizes</a></li>
 					<li><a onclick="comingSoon('Travel reimbursement information is');" href="#"><i class="material-icons left blue-text">directions_car</i>Travel reimbursement</a></li>
 					<li><a href="connect.html#"><i class="material-icons left indigo-text">people</i>Connect</a></li>
@@ -84,44 +84,30 @@
 			</div>
 		</nav>
 	</div>
-
+	
 	<!-- ////////// EVERYTHING ABOVE IS FOR HEADER AND NAVBAR ////////// -->
 	<!-- ////////// THIS IS WHERE YOU SHOULD ADD PAGE CONTENT ////////// -->
-
+	
 	<div class="container">
 		<div class="section">
 			<div class="row">
 				<div class="col s12">
 					<div class="card white">
 						<div class="card-content black-text">
-
-							<p>The HackRiddle App was built by members of the Mobile Application Development (M.A.D.) Club at Embry-Riddle Aeronautical University. Learn more about our team members here, and learn more about our organization on our website at <a href="www.eraumad.club">eraumad.club!</a></p>
-							<br>
-							<ul class="collection">
-								<script src="https://gridspree.io/ss/kc7QtJZvPLkqVYNYFV4htV.js"></script>
-								<script type="x-gridspree-template">
-									{{#rows}}
-									<li class="collection-item avatar">
-										<img src="{{Picture URL}}" alt="" class="circle">
-										<span class="title"><b>{{Name}},</b></span> {{Title}} 
-										(<a style="color: #083791;" href="{{GitHub URL}}">GitHub</a>)
-										<p>{{Bio}}
-										</p>
-
-									</li>
-
-									{{/rows}}
-								</script>
-							</ul>
+							<span class="card-title">Test</span>
+							<p>This is some sample content.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	<div style="min-height: 200px;">
+		<br>
+	</div>
+	
 	<!-- //////////    DO NOT EDIT BEYOND THIS POINT      ////////// -->
-
+	
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 	<script>
