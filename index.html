@@ -61,6 +61,7 @@
 	<div class="container" id="content" style="display: none;">
 		<div class="section">
 			<div class="row">
+<!--
 				<div class="col s12 m6 offset-m6 pull-m3">
 					<div class="card white">
 						<div class="card-content black-text">
@@ -71,6 +72,7 @@
 						</div>
 					</div>
 				</div>
+-->
 
 				<div id="cards"></div>
 			</div>
@@ -109,24 +111,26 @@
 	<script type="text/javascript" charset="utf-8">
 		var url = 'https://script.google.com/macros/s/AKfycbw_LpXfzcTX3EZviQ_ExjmxYalq0VWeOHOdajpkImeFCf_by9JN/exec';
 		
-		$.get({
+		$.ajax({
 			url: url,
 			context: document.body,
 			success: function(data) {
+				
+				console.log(data);
 				var listString = '';
-				alert(url);
-				alert(data);
 				for (var i = 0; i < data.length; i++) {
-					listString += '<li class="collection-item">';
-					listString += '<div class="col s12 m6 offset-m6 pull-m3"><div class="card white"><div class="card-content black-text"><span class="card-title"><center>';
-					listString += 'TIME';
-					listString += '</center><p>';
-					listString += '{{Description}}';
+					listString += '<div class="col s12 m6 offset-m6 pull-m3"><div class="card white"><div class="card-content black-text"><center><span class="card-title">';
+					listString += data[i].Title;
+					listString += '</span><p>';
+					listString += 'Time' + '</p></center><p>';
+					listString += data[i].Description;
 					listString += '</p></div></div></div>';
 				}
 
 				$('#cards').html(listString);
-				document.getElementById("hideLoading").style.display = "none";
+				
+				
+				
 			},
 			error: function() {
 				document.getElementById("hideLoading").style.display = "none";
