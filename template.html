@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -40,7 +41,6 @@
 		}]);
 
 	</script>
-
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
 
@@ -56,42 +56,12 @@
 </head>
 
 <body onload="addToHomescreen();">
-	<!-- Preloader -->
-	<div id="preloader">
-		<div id="status">&nbsp;</div>
-	</div>
-	<div class="navbar fixed">
-		<nav class="" style="background-color: #083791;" role="navigation">
-			<div class="nav-wrapper container">
+	<div id="menu"></div>
 
-				<a id="logo-container" href="#" class="brand-logo center">Dashboard</a>
-				<ul id="nav-mobile" class="side-nav">
-					<li style="background-color: #083791;">
-						<div class="userView center">
-							<img src="img/hackRiddleLogo.png" style="width: 80%; margin-top: 30px;">
-						</div>
-					</li>
-					<li><a href="index.html"><i class="material-icons left red-text">home</i>Home</a></li>
-					<li><a onclick="comingSoon('The venue map is');" href="#" class="disabled"><i class="material-icons left green-text">directions</i>Venue Map</a></li>
-					<li><a onclick="comingSoon('Information about meals is');" href="#" class="disabled"><i class="material-icons left orange-text">local_dining</i>Meals</a></li>
-					<li><a onclick="comingSoon('The gate talks schedule is');" href="#" class="disabled"><i class="material-icons left violet-text">school</i>Gate Talks</a></li>
-					<li><a onclick="comingSoon('Prizes are');" href="#"><i class="material-icons left amber-text">star</i>Prizes</a></li>
-					<li><a onclick="comingSoon('Travel reimbursement information is');" href="#"><i class="material-icons left blue-text">directions_car</i>Travel reimbursement</a></li>
-					<li><a href="connect.html#"><i class="material-icons left indigo-text">people</i>Connect</a></li>
-					<li><a href="about.html"><i class="material-icons left pink-text">info</i>About the app</a></li>
-				</ul>
-				<a href="#" data-activates="nav-mobile" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
-			</div>
-		</nav>
-	</div>
-	
-	<!-- ////////// EVERYTHING ABOVE IS FOR HEADER AND NAVBAR ////////// -->
-	<!-- ////////// THIS IS WHERE YOU SHOULD ADD PAGE CONTENT ////////// -->
-	
-	<div class="container">
+	<div class="container" id="content" style="display: none;">
 		<div class="section">
 			<div class="row">
-				<div class="col s12">
+				<div class="col s12 m6 offset-m6 pull-m3">
 					<div class="card white">
 						<div class="card-content black-text">
 							<span class="card-title">Test</span>
@@ -102,26 +72,19 @@
 			</div>
 		</div>
 	</div>
-	<div style="min-height: 200px;">
-		<br>
-	</div>
-	
-	<!-- //////////    DO NOT EDIT BEYOND THIS POINT      ////////// -->
-	
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-	<script>
-		$(".button-collapse").sideNav({
-			menuWidth: 300
-		});
 
-	</script>
+	<div id="footer"></div>
+
+	<!-- Jquery -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
 	<!-- Preloader -->
 	<script type="text/javascript">
 		//<![CDATA[
 		$(window).on('load', function() { // makes sure the whole site is loaded 
 				$('#status').fadeOut(); // will first fade out the loading animation 
-				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+				$('#content').fadeIn(); // will first fade out the loading animation 
 				$('body').delay(350).css({
 					'overflow': 'visible'
 				});
@@ -129,6 +92,16 @@
 			//]]>
 
 	</script>
+
+	<!-- Header and footer (ensures that all pages have same structure) -->
+	<script>
+		$(function() {
+			$("#menu").load("menu.html");
+			$("#footer").load("footer.html");
+		});
+
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 </body>
 
 </html>
