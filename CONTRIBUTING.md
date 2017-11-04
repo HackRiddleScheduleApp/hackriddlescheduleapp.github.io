@@ -8,5 +8,8 @@ Great! We're happy to have you. When contributing to this repository, please ide
 
 Please test your code locally before making a pull request! 
 
+#### Adding a page
+See "Make a Code Contribution" and make a copy of `template.html`, modifying the content of the page.
+
 #### Running the Application
 This application was designed with ease-of-use **and** ease-of-development in mind. Simply `git clone` the repository, and then open `index.html` in your web browser of choice. That's it! 
