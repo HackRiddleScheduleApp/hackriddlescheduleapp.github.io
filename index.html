@@ -64,13 +64,15 @@
 				<div class="col s12 m6 offset-m6 pull-m3">
 					<div class="card white">
 						<div class="card-content black-text">
-							<span class="card-title"><center>Project Expo</center></span>
-							Get your projects ready and head to the atrium to find your way to the Embry-Riddle Student Center. You will find your project name and the associated table number and get ready for the judges.
-							<center><br><a href="https://goo.gl/5egXFt" style="background-color: #083791;" class="waves-effect waves-light btn">get your number</a></center>
+							<span class="card-title"><center>Project Expo</center></span> Get your projects ready and head to the atrium to find your way to the Embry-Riddle Student Center. You will find your project name and the associated table number and get ready for the judges.
+							<center>
+								<br><a href="https://goo.gl/5egXFt" style="background-color: #083791;" class="waves-effect waves-light btn">get your number</a></center>
 							<br>
 						</div>
 					</div>
 				</div>
+
+				<div id="cards"></div>
 			</div>
 		</div>
 	</div>
@@ -99,6 +101,37 @@
 		$(function() {
 			$("#menu").load("menu.html");
 			$("#footer").load("footer.html");
+		});
+
+	</script>
+	
+	<!-- Google Sheets content -->
+	<script type="text/javascript" charset="utf-8">
+		var url = 'https://script.google.com/macros/s/AKfycbw_LpXfzcTX3EZviQ_ExjmxYalq0VWeOHOdajpkImeFCf_by9JN/exec';
+		
+		$.get({
+			url: url,
+			context: document.body,
+			success: function(data) {
+				var listString = '';
+				alert(url);
+				alert(data);
+				for (var i = 0; i < data.length; i++) {
+					listString += '<li class="collection-item">';
+					listString += '<div class="col s12 m6 offset-m6 pull-m3"><div class="card white"><div class="card-content black-text"><span class="card-title"><center>';
+					listString += 'TIME';
+					listString += '</center><p>';
+					listString += '{{Description}}';
+					listString += '</p></div></div></div>';
+				}
+
+				$('#cards').html(listString);
+				document.getElementById("hideLoading").style.display = "none";
+			},
+			error: function() {
+				document.getElementById("hideLoading").style.display = "none";
+				$('#cards').html('Error. Please reach out to info@hackriddle.com');
+			}
 		});
 
 	</script>
