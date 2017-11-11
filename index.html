@@ -128,7 +128,7 @@
 				}
 
 				$('#cards').html(listString);
-								document.getElementById("hideLoading").style.display = "none";
+				$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 
 			},
 			error: function() {
